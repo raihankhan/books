@@ -1,0 +1,48 @@
+name: Generate README
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  generate-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
+          ref: ${{ github.head_ref }}
+
+      - name: Generate README
+        run: |
+          echo "# Books" > README.md
+          echo "" >> README.md
+          echo "This repository contains a collection of books in PDF format." >> README.md
+          echo "" >> README.md
+          echo "## List of Books" >> README.md
+          echo "" >> README.md
+          for file in *.pdf; do
+            filename=$(basename "$file")
+            bookname=$(echo "$filename" | sed 's/.pdf$//' | sed 's/%20/ /g')
+            echo "* **[$bookname]($filename)**" >> README.md
+          done
+          echo "" >> README.md
+          echo "**Please note:**" >> README.md
+          echo "" >> README.md
+          echo "* The books in this repository are for educational and personal use only." >> README.md
+          echo "* I do not own the copyright to these books." >> README.md
+          echo "* Please respect the rights of the copyright holders." >> README.md
+          echo "" >> README.md
+          echo "**Contributions:**" >> README.md
+          echo "" >> README.md
+          echo "Feel free to contribute to this repository by adding more books or improving the existing descriptions. Please ensure that you have the right to share the books you add." >> README.md
+          echo "" >> README.md
+          echo "**Enjoy reading!**" >> README.md
+
+      - name: Commit and push README
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update README with book list"
+          branch: master
