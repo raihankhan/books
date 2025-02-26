@@ -1,8 +1,8 @@
-# Books
+# Books :books:
 
 This repository contains a collection of books in PDF format.
 
-## List of Books
+## List of Books :page_with_curl:
 
 * **[150-leetcode-ds-problems](150-leetcode-ds-problems.pdf)**
 * **[20-DSA-interview-design-pattern](20-DSA-interview-design-pattern.pdf)**
@@ -28,13 +28,13 @@ This repository contains a collection of books in PDF format.
 * **[system-design](system-design.pdf)**
 * **[what-is-microservices](what-is-microservices.pdf)**
 
-**Please note:**
+**Please note:** :hourglass:
 
 * The books in this repository are for educational and personal use only.
 * I do not own the copyright to these books.
 * Please respect the rights of the copyright holders.
 
-**Contributions:**
+**Contributions:** :white_check_mark:
 
 Feel free to contribute to this repository by adding more books or improving the existing descriptions. Please ensure that you have the right to share the books you add.
 
