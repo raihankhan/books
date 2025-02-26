@@ -17,11 +17,11 @@ jobs:
 
       - name: Generate README
         run: |
-          echo "# Books" > README.md
+          echo "# Books :books:" > README.md
           echo "" >> README.md
           echo "This repository contains a collection of books in PDF format." >> README.md
           echo "" >> README.md
-          echo "## List of Books" >> README.md
+          echo "## List of Books :page_with_curl:" >> README.md
           echo "" >> README.md
           for file in *.pdf; do
             filename=$(basename "$file")
@@ -29,13 +29,13 @@ jobs:
             echo "* **[$bookname]($filename)**" >> README.md
           done
           echo "" >> README.md
-          echo "**Please note:**" >> README.md
+          echo "**Please note:** :hourglass:" >> README.md
           echo "" >> README.md
           echo "* The books in this repository are for educational and personal use only." >> README.md
           echo "* I do not own the copyright to these books." >> README.md
           echo "* Please respect the rights of the copyright holders." >> README.md
           echo "" >> README.md
-          echo "**Contributions:**" >> README.md
+          echo "**Contributions:** :white_check_mark:" >> README.md
           echo "" >> README.md
           echo "Feel free to contribute to this repository by adding more books or improving the existing descriptions. Please ensure that you have the right to share the books you add." >> README.md
           echo "" >> README.md
